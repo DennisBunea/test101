@@ -1,0 +1,21 @@
+---
+
+- step:
+    name: train-model
+    image: tensorflow/tensorflow:2.1.0-py3
+    command: python train.py {parameters}
+    inputs:
+      - name: mnist
+        default: s3://onboard-sample/tf-sample/mnist.npz
+    parameters:
+      - name: epochs
+        type: integer
+        default: 5
+    #inputs:
+    #  - name: example-input
+    #    default: https://example.com/
+    #parameters:
+    # - name: example
+    #   description: Example parameter
+    #   type: integer
+    #   default: 300
