@@ -23,3 +23,12 @@
     #   description: Example parameter
     #   type: integer
     #   default: 300
+- endpoint:
+     name: inference
+     image: tensorflow/tensorflow:2.1.0-py3
+     wsgi: deploy:predict
+     files:
+      - name: model
+        description: Model output file from TensorFlow
+        path: model.h5
+
