@@ -1,11 +1,17 @@
 ---
-
+- step:
+    name: generate-message
+    image: python:3.9
+    command: 
+      - pip install valohai-utils
+      - python message_generator.py
 - step:
     name: train-model
     image: tensorflow/tensorflow:2.1.0-py3
     command: 
       - pip install valohai-utils
       - python train.py {parameters}
+
     
    
     inputs:
