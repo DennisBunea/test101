@@ -9,7 +9,7 @@
     name: train-model
     image: tensorflow/tensorflow:2.1.0-py3
     command: 
-      - echo /valohai/inputs/message/message.txt 
+      - cat /valohai/inputs/message/message.txt 
       - pip install valohai-utils
       - python train.py {parameters}
 
