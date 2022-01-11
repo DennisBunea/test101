@@ -44,3 +44,17 @@
         description: Model output file from TensorFlow
         path: model.h5
 
+- pipeline:
+    name: Training Pipeline
+    nodes:
+      - name: message-generator
+        type: execution
+        step: generate-message
+      - name: train
+        type: execution
+        step: train-model
+    edges:
+      - [message-generator.output.message.txt,train.input.message]
+      
+
+      ##[NODE_NAME.output.FILENAME, NODE_NAME.input.INPUT_NAME]
